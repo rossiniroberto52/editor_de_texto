@@ -88,59 +88,169 @@ namespace editor_de_texto
         {
             string nome_da_fonte = null;
             float tamanho_da_Fonte = 0;
-            bool negr = false;
+            bool n,i,s = false;
 
             nome_da_fonte = richTextBox1.Font.Name;
             tamanho_da_Fonte = richTextBox1.Font.Size;
-            negr = richTextBox1.Font.Bold;
+            n = richTextBox1.SelectionFont.Bold;
+            i = richTextBox1.SelectionFont.Italic;
+            s = richTextBox1.SelectionFont.Underline;
+            richTextBox1.SelectionFont = new Font(nome_da_fonte, tamanho_da_Fonte, FontStyle.Regular);
             
-            if (negr == false)
+            if (n == false)
             {
-                richTextBox1.SelectionFont = new Font(nome_da_fonte, tamanho_da_Fonte, FontStyle.Bold);
+                if (i == true & s == true)
+                {
+                    richTextBox1.SelectionFont = new Font(nome_da_fonte, tamanho_da_Fonte, FontStyle.Bold | FontStyle.Italic | FontStyle.Underline);
+                }
+                else if (i == false & s == true)
+                {
+                    richTextBox1.SelectionFont = new Font(nome_da_fonte, tamanho_da_Fonte, FontStyle.Bold | FontStyle.Underline);
+                }
+                else if (i == true & s == false)
+                {
+                    richTextBox1.SelectionFont = new Font(nome_da_fonte, tamanho_da_Fonte, FontStyle.Bold | FontStyle.Italic);
+                }
+                else if (i == false & s == false)
+                {
+                    richTextBox1.SelectionFont = new Font(nome_da_fonte, tamanho_da_Fonte, FontStyle.Bold);
+                }
             }
             else
             {
-                richTextBox1.SelectionFont = new Font(nome_da_fonte, tamanho_da_Fonte, FontStyle.Regular);
+                if (i == true & s == true)
+                {
+                    richTextBox1.SelectionFont = new Font(nome_da_fonte, tamanho_da_Fonte, FontStyle.Italic | FontStyle.Underline);
+                }
+                else if (i == false & s == true)
+                {
+                    richTextBox1.SelectionFont = new Font(nome_da_fonte, tamanho_da_Fonte, FontStyle.Underline);
+                }
+                else if (i == true & s == false)
+                {
+                    richTextBox1.SelectionFont = new Font(nome_da_fonte, tamanho_da_Fonte, FontStyle.Italic);
+                }
             }
         }
         private void Italico()
         {
             string nome_da_fonte = null;
             float tamanho_da_Fonte = 0;
-            bool ita = false;
+            bool n, i, s = false;
 
             nome_da_fonte = richTextBox1.Font.Name;
             tamanho_da_Fonte = richTextBox1.Font.Size;
-            ita = richTextBox1.Font.Italic;
+            n = richTextBox1.SelectionFont.Bold;
+            i = richTextBox1.SelectionFont.Italic;
+            s = richTextBox1.SelectionFont.Underline;
+            richTextBox1.SelectionFont = new Font(nome_da_fonte, tamanho_da_Fonte, FontStyle.Regular);
 
-            if (ita == false)
+            if (i == false)
             {
-                richTextBox1.SelectionFont = new Font(nome_da_fonte, tamanho_da_Fonte, FontStyle.Italic);
+                if (n == true & s == true)
+                {
+                    richTextBox1.SelectionFont = new Font(nome_da_fonte, tamanho_da_Fonte, FontStyle.Bold | FontStyle.Italic | FontStyle.Underline);
+                }
+                else if (n == false & s == true)
+                {
+                    richTextBox1.SelectionFont = new Font(nome_da_fonte, tamanho_da_Fonte, FontStyle.Italic | FontStyle.Underline);
+                }
+                else if (n == true & s == false)
+                {
+                    richTextBox1.SelectionFont = new Font(nome_da_fonte, tamanho_da_Fonte, FontStyle.Bold | FontStyle.Italic);
+                }
+                else if (n == false & s == false)
+                {
+                    richTextBox1.SelectionFont = new Font(nome_da_fonte, tamanho_da_Fonte, FontStyle.Italic);
+                }
             }
             else
             {
-                richTextBox1.SelectionFont = new Font(nome_da_fonte, tamanho_da_Fonte, FontStyle.Italic);
+                if (n == true & s == true)
+                {
+                    richTextBox1.SelectionFont = new Font(nome_da_fonte, tamanho_da_Fonte, FontStyle.Bold | FontStyle.Underline);
+                }
+                else if (n == false & s == true)
+                {
+                    richTextBox1.SelectionFont = new Font(nome_da_fonte, tamanho_da_Fonte, FontStyle.Underline);
+                }
+                else if (n == true & s == false)
+                {
+                    richTextBox1.SelectionFont = new Font(nome_da_fonte, tamanho_da_Fonte, FontStyle.Bold);
+                }
             }
         }
         private void Sublinhado()
         {
             string nome_da_fonte = null;
             float tamanho_da_Fonte = 0;
-            bool sub = false;
+            bool n, i, s = false;
 
             nome_da_fonte = richTextBox1.Font.Name;
             tamanho_da_Fonte = richTextBox1.Font.Size;
-            sub = richTextBox1.Font.Bold;
+            n = richTextBox1.SelectionFont.Bold;
+            i = richTextBox1.SelectionFont.Italic;
+            s = richTextBox1.SelectionFont.Underline;
+            richTextBox1.SelectionFont = new Font(nome_da_fonte, tamanho_da_Fonte, FontStyle.Regular);
 
-            if (sub == false)
+            if (s == false)
             {
-                richTextBox1.SelectionFont = new Font(nome_da_fonte, tamanho_da_Fonte, FontStyle.Underline);
+                if (i == true & n == true)
+                {
+                    richTextBox1.SelectionFont = new Font(nome_da_fonte, tamanho_da_Fonte, FontStyle.Bold | FontStyle.Italic | FontStyle.Underline);
+                }
+                else if (i == false & n == true)
+                {
+                    richTextBox1.SelectionFont = new Font(nome_da_fonte, tamanho_da_Fonte, FontStyle.Bold | FontStyle.Italic);
+                }
+                else if (i == true & n == false)
+                {
+                    richTextBox1.SelectionFont = new Font(nome_da_fonte, tamanho_da_Fonte, FontStyle.Bold | FontStyle.Underline);
+                }
+                else if (i == false & n == false)
+                {
+                    richTextBox1.SelectionFont = new Font(nome_da_fonte, tamanho_da_Fonte, FontStyle.Underline);
+                }
             }
             else
             {
-                richTextBox1.SelectionFont = new Font(nome_da_fonte, tamanho_da_Fonte, FontStyle.Underline);
+                if (i == true & n == true)
+                {
+                    richTextBox1.SelectionFont = new Font(nome_da_fonte, tamanho_da_Fonte, FontStyle.Italic | FontStyle.Italic);
+                }
+                else if (i == false & n == true)
+                {
+                    richTextBox1.SelectionFont = new Font(nome_da_fonte, tamanho_da_Fonte, FontStyle.Italic);
+                }
+                else if (i == true & n == false)
+                {
+                    richTextBox1.SelectionFont = new Font(nome_da_fonte, tamanho_da_Fonte, FontStyle.Bold);
+                }
             }
         }
+        private void AlinhaEsquerda()
+        {
+            richTextBox1.SelectionAlignment = HorizontalAlignment.Right;
+        }
+        private void AlinhaDireita()
+        {
+            richTextBox1.SelectionAlignment = HorizontalAlignment.Left;
+        }
+        private void AlinhaCentro()
+        {
+            richTextBox1.SelectionAlignment = HorizontalAlignment.Center;
+        }
+        private void Imprimir()
+        {
+            printDialog1.Document = printDocument1;
+            string texto = this.richTextBox1.Text;
+            leitura = new StringReader(texto);
+            if (printDialog1.ShowDialog() == DialogResult.OK)
+            {
+                this.printDocument1.Print();
+            }
+        }
+        
 
         //objs
         private void btn_Novo_Click(object sender, EventArgs e)
@@ -222,5 +332,78 @@ namespace editor_de_texto
         {
             Sublinhado();
         }
+
+        private void btn_Esquerda_Click(object sender, EventArgs e)
+        {
+            AlinhaEsquerda();
+        }
+
+        private void esquerdaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AlinhaEsquerda();
+        }
+
+        private void btn_Centro_Click(object sender, EventArgs e)
+        {
+            AlinhaCentro();
+        }
+
+        private void centralixarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AlinhaCentro();
+        }
+
+        private void btn_Direita_Click(object sender, EventArgs e)
+        {
+            AlinhaDireita();
+        }
+
+        private void direitaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AlinhaDireita();
+        }
+        private void imprimirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Imprimir();
+        }
+        private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            float linhasPagina = 0;
+            float PosY = 0;
+            int count = 0;
+            float MargemEsquerda = e.MarginBounds.Left - 50;
+            float MargemSuperior = e.MarginBounds.Top - 50;
+            if(MargemEsquerda < 5)
+            {
+                MargemEsquerda = 20;
+            }
+            if(MargemSuperior < 5)
+            {
+                MargemSuperior = 20;
+            }
+            string linha = null;
+            Font Fonte = this.richTextBox1.Font;
+            SolidBrush pincel = new SolidBrush(Color.Black);
+            linhasPagina = e.MarginBounds.Height / Fonte.GetHeight(e.Graphics);
+            linha = leitura.ReadLine();
+            while(count < linhasPagina)
+            {
+                PosY = (MargemSuperior + (count * Fonte.GetHeight(e.Graphics)));
+                e.Graphics.DrawString(linha, Fonte, pincel,MargemEsquerda, PosY, new StringFormat());
+                count+=1;
+                linha = leitura.ReadLine();
+            }
+            if(linha != null)
+            {
+                e.HasMorePages = true;
+            }
+            else
+            {
+                e.HasMorePages = false;
+            }
+            pincel.Dispose();
+        }
+
+        
     }
 }
